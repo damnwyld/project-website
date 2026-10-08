@@ -48,3 +48,10 @@ p{max-width:70ch}
   .nav ul{flex-direction:column}
   h1{font-size:1.7rem}
 }
+
+
+.werte{margin:1rem 0 2rem}
+.werte dt{font-weight:700;font-size:1.15rem;margin-top:1.5rem;
+  padding-left:.8rem;border-left:4px solid var(--accent)}
+.werte dd{margin:.3rem 0 0;padding-left:.8rem;max-width:70ch;
+  border-left:4px solid var(--accent)}

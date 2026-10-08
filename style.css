@@ -1,0 +1,50 @@
+:root{
+  --bg:#faf8f4; --text:#2b2a28; --muted:#6b6862;
+  --header-bg:#2f4a3f; --header-text:#f4f1ea; --accent:#d9a441;
+  --footer-bg:#e9e5dc; --maxw:60rem;
+}
+*{box-sizing:border-box}
+html{height:100%}
+body{margin:0;min-height:100%;display:flex;flex-direction:column;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  line-height:1.65;color:var(--text);background:var(--bg)}
+a{color:var(--header-bg)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* Kopfzeile */
+.site-header{background:var(--header-bg);color:var(--header-text);position:sticky;top:0;z-index:10}
+.header-inner{max-width:var(--maxw);margin:0 auto;padding:.5rem 1rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.logo img{display:block;height:3.5rem;width:auto}
+.nav-toggle{display:none}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.25rem;flex-wrap:wrap}
+.nav a{display:block;padding:.5rem .9rem;color:var(--header-text);text-decoration:none;
+  border-bottom:3px solid transparent}
+.nav a:hover{border-bottom-color:var(--accent)}
+.nav a[aria-current="page"]{border-bottom-color:var(--accent);font-weight:600}
+
+/* Inhalt */
+main{flex:1;width:100%;max-width:var(--maxw);margin:0 auto;padding:2rem 1rem 3rem}
+h1{font-size:2.1rem;line-height:1.2;margin:.2em 0 .6em}
+h2{font-size:1.4rem;margin:2em 0 .5em}
+p{max-width:70ch}
+.hero img{width:100%;height:auto;border-radius:6px;margin-bottom:1.5rem}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:1rem;margin-top:1rem}
+.gallery img{width:100%;height:12rem;object-fit:cover;border-radius:6px}
+
+/* Fußzeile */
+.site-footer{background:var(--footer-bg);color:var(--muted);font-size:.9rem}
+.footer-inner{max-width:var(--maxw);margin:0 auto;padding:1.2rem 1rem;
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.site-footer a{color:var(--text)}
+.site-footer ul{list-style:none;margin:0;padding:0;display:flex;gap:1.2rem}
+
+/* Handy */
+@media (max-width:40rem){
+  .nav-toggle{display:block;background:none;border:1px solid var(--header-text);
+    color:var(--header-text);padding:.4rem .8rem;border-radius:4px;font:inherit;cursor:pointer}
+  .nav{width:100%;display:none}
+  .nav.open{display:block}
+  .nav ul{flex-direction:column}
+  h1{font-size:1.7rem}
+}
